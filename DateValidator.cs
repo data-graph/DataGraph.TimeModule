@@ -1,27 +1,31 @@
 ﻿using System;
+
 namespace DataGraph.TimeModule
 {
     public class DateValidator
     {
 
-        public static void ValidateDate(Date date)
+        public static bool ValidateDate(Date date)
         {
-            throw new NotImplementedException();
+            if (date == null)
+                return false;
+
+            return (ValidateDay(date.Day) && ValidateMonth(date.Month) && ValidateYear(date.Year));
         }
 
-        public static void ValidateDay(int day)
+        public static bool ValidateDay(int? day)
         {
-            throw new NotImplementedException();
+            return (day == null || (day > 0 && day < 32));
         }
 
-        public static void ValidateMonth(int month)
+        public static bool ValidateMonth(int? month)
         {
-            throw new NotImplementedException();
+            return (month == null || (month > 0 && month < 13));
         }
 
-        public static void ValidateYear(long year)
+        public static bool ValidateYear(long? year)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
     }
