@@ -1,6 +1,6 @@
 ﻿namespace DataGraph.TimeModule
 {
-    public class Date
+    public partial class Date
     {
 
         // Properties
